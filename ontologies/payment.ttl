@@ -1,0 +1,61 @@
+@prefix payment: <https://ns.slashlife.ai/agent/payment#> .
+@prefix core: <https://ns.slashlife.ai/agent/core#> .
+@prefix agent: <https://ns.slashlife.ai/agent/agent#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+#################################################################
+# Payment Ontology
+#################################################################
+
+payment:PaymentIntent a owl:Class ;
+    rdfs:subClassOf core:Intent ;
+    rdfs:label "Payment Intent" ;
+    rdfs:comment "A semantic expression of an intent to transfer value from one agent to another." .
+
+payment:SettlementInterface a owl:Class ;
+    rdfs:label "Settlement Interface" ;
+    rdfs:comment "Describes the technical and semantic requirements for settling a payment." .
+
+# -- Properties --
+
+payment:payer a owl:ObjectProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range core:AgentEntity ;
+    rdfs:label "Payer" .
+
+payment:payee a owl:ObjectProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range core:AgentEntity ;
+    rdfs:label "Payee" .
+
+payment:reason a owl:DatatypeProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range xsd:string ;
+    rdfs:label "Reason" .
+
+payment:amount a owl:DatatypeProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "Amount" .
+
+payment:unit a owl:DatatypeProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range xsd:string ;
+    rdfs:label "Unit" .
+
+payment:hasSettlementInterface a owl:ObjectProperty ;
+    rdfs:domain payment:PaymentIntent ;
+    rdfs:range payment:SettlementInterface ;
+    rdfs:label "has settlement interface" .
+
+# -- Settlement Interface Properties --
+
+payment:acceptedMethod a owl:DatatypeProperty ;
+    rdfs:domain payment:SettlementInterface ;
+    rdfs:range xsd:string .
+
+payment:category a owl:DatatypeProperty ;
+    rdfs:domain payment:SettlementInterface ;
+    rdfs:range xsd:string .

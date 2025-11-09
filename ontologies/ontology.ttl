@@ -16,4 +16,5 @@
     owl:imports <https://ns.slashlife.ai/agent/agent-profile> ;
     owl:imports <https://ns.slashlife.ai/agent/execution-context> ;
     owl:imports <https://ns.slashlife.ai/agent/intent> ;
-    owl:imports <https://ns.slashlife.ai/agent/security-binding> .
+    owl:imports <https://ns.slashlife.ai/agent/security-binding> ;
+    owl:imports <https://ns.slashlife.ai/agent/payment> .

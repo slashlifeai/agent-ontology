@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ns.slashlife.ai/agent/profiles/payment.jsonld",
+  "title": "Payment Intent Schema",
+  "description": "Defines the structure of a semantic payment intent.",
+  "type": "object",
+  "@context": "https://ns.slashlife.ai/agent/context/payment.jsonld",
+
+  "properties": {
+    "id": { "type": "string", "format": "uri" },
+    "type": { "type": "string", "const": "PaymentIntent" },
+    "payer": { "type": "string", "format": "uri" },
+    "payee": { "type": "string", "format": "uri" },
+    "reason": { "type": "string" },
+    "amount": { "type": "string" },
+    "unit": { "type": "string" },
+    "settlement_interface": {
+      "type": "object",
+      "properties": {
+        "accepted_methods": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "category": { "type": "string" },
+        "note": { "type": "string" }
+      },
+      "required": ["accepted_methods"]
+    },
+    "accountability": {
+      "type": "object",
+      "properties": {
+        "must_write_ledger": { "type": "boolean" },
+        "ledger_record_type": { "type": "string" }
+      }
+    }
+  },
+  "required": ["id", "type", "payer", "payee", "amount", "unit"]
+}

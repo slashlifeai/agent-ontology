@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/payment.jsonld",
+    "https://ns.slashlife.ai/agent/context/ledger.jsonld",
+    "https://ns.slashlife.ai/agent/context/delegation.jsonld"
+  ],
+
+  "id": "payment-intent:2025-00023",
+  "type": "PaymentIntent",
+
+  "payer": "did:key:z6MkCompanyAdmin001",
+  "payee": "did:key:z6MkmarketingAgent01",
+
+  "reason": "Completed marketing copy task",
+  "amount": "5.0",
+  "unit": "semantic-credit",
+
+  "settlement_interface": {
+    "accepted_methods": ["did:eth", "did:ebsi"],
+    "category": "stable-value",
+    "note": "Execution happens in runtime, not ontology"
+  },
+
+  "accountability": {
+    "must_write_ledger": true,
+    "ledger_record_type": "GovernanceLedgerRecord"
+  }
+}

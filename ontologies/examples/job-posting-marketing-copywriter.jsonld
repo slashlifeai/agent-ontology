@@ -1,0 +1,40 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/intent.jsonld",
+    "https://ns.slashlife.ai/agent/context/delegation.jsonld",
+    "https://ns.slashlife.ai/agent/context/agent.jsonld"
+  ],
+
+  "id": "job:marketing_copywriter_v2025",
+  "type": "JobPosting",
+
+  "required_capabilities": [
+    "draft_copy",
+    "schedule_post"
+  ],
+
+  "intent": {
+    "id": "intent:produce_marketing_copy",
+    "type": "OperationalIntent",
+    "action": "draft_copy",
+    "parameters": {
+      "language": "en",
+      "tone": "professional",
+      "channel": "linkedin"
+    }
+  },
+
+  "delegation": {
+    "delegator": "did:key:z6MkCompanyAdmin001",
+    "delegate": "agent:any",
+    "scope": ["draft_copy", "schedule_post"],
+    "constraints": ["must_log_ledger", "must_run_in_TEE"],
+    "expiration": "2025-12-31T00:00:00Z"
+  },
+
+  "reward": {
+    "type": "semantic-compensation",
+    "description": "Task-based performance unit",
+    "estimated_value": 3
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "@vocab": "https://ns.slashlife.ai/agent/payment#",
+    "core": "https://ns.slashlife.ai/agent/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "id": "@id",
+    "type": "@type",
+
+    "PaymentIntent": "payment:PaymentIntent",
+    "SettlementInterface": "payment:SettlementInterface",
+
+    "payer": { "@id": "payment:payer", "@type": "@id" },
+    "payee": { "@id": "payment:payee", "@type": "@id" },
+    "reason": "payment:reason",
+    "amount": { "@id": "payment:amount", "@type": "xsd:decimal" },
+    "unit": "payment:unit",
+    "settlement_interface": { "@id": "payment:hasSettlementInterface", "@type": "@id" },
+
+    "accepted_methods": "payment:acceptedMethod",
+    "category": "payment:category"
+  }
+}

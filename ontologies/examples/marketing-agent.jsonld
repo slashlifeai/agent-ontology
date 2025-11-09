@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://ns.slashlife.ai/agent/context/agent.jsonld",
+    "https://ns.slashlife.ai/agent/context/capability.jsonld",
+    "https://ns.slashlife.ai/agent/context/delegation.jsonld",
+    "https://ns.slashlife.ai/agent/context/ledger.jsonld"
+  ],
+  "id": "did:key:z6MkmarketingAgent01",
+  "type": "core:Agent",
+  "title": "marketing-agent",
+  "version": "1.0.0",
+
+  "capabilities": {
+    "functions": [
+      { "id": "draft_copy", "description": "Generate marketing copy" },
+      { "id": "schedule_post", "description": "Plan and schedule content" }
+    ],
+    "skills": ["Content Writing", "Brand Analysis", "SEO Optimization"]
+  },
+
+  "purpose_and_role": {
+    "objective": "Support marketing pipeline for cross-border campaigns",
+    "owner": "did:key:z6MkCompanyAdmin001"
+  },
+
+  "operational_triggers_and_io": {
+    "triggers": [
+      { "type": "schedule", "source": "cron://daily" }
+    ],
+    "inputs": [
+      { "name": "campaign_brief", "type": "file" }
+    ],
+    "outputs": [
+      { "name": "marketing_copy", "type": "text" }
+    ]
+  },
+
+  "identity_interfaces": {
+    "identities": [
+      {
+        "id": "primary",
+        "type": "did",
+        "did": "did:key:z6MkmarketingAgent01",
+        "capabilities": ["sign", "authenticate"],
+        "key_management_system": "TEE-Keyslot-3"
+      }
+    ]
+  },
+
+  "lifecycle_management": {
+    "genesis_record": {
+      "did": "did:key:z6MkmarketingAgent01",
+      "public_key": "zQ3shkey123...",
+      "key_generation_mechanism": "ed25519",
+      "timestamp": "2025-01-01T00:00:00Z",
+      "ledger_event_id": "ledger-001"
+    },
+    "state": "active",
+    "health_check": {
+      "type": "http",
+      "endpoint": "https://os/slashlife/health/marketing-agent"
+    }
+  }
+}
