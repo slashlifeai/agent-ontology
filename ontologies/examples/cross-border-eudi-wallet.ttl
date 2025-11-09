@@ -1,0 +1,103 @@
+@prefix ex: <http://example.org/agent/examples#> .
+@prefix agent: <http://example.org/agent-ontology/agent#> .
+@prefix id: <http://example.org/agent-ontology/identity#> .
+@prefix del: <http://example.org/agent-ontology/delegation#> .
+@prefix cap: <http://example.org/agent-ontology/capability#> .
+@prefix ledger: <http://example.org/agent-ontology/ledger#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# 1. AGENT: Taiwan SME Cross-Border Compliance Agent
+#################################################################
+
+ex:TWComplianceAgent a agent:Agent ;
+    agent:title "Taiwan SME EUDI Wallet Compliance Agent" ;
+    agent:version "1.0.0" ;
+    agent:state agent:Active ;
+    agent:objective "Handle all EUDI Wallet interactions for a Taiwan SME entering the EU market." ;
+    agent:ownedBy "did:tw:company12345" .
+
+#################################################################
+# 2. IDENTITIES (EUDI Wallet + Taiwan DID + DID:ETH for settlement)
+#################################################################
+
+ex:TWComplianceAgent id:hasIdentity ex:EUDIWalletIdentity, ex:TaiwanCorporateIdentity, ex:StablecoinSettlementIdentity .
+
+ex:EUDIWalletIdentity a id:Identity ;
+    id:id "eudi-wallet" ;
+    id:type "EUDI" ;
+    id:did "did:ebsi:z12A45xyz" ;
+    id:keyManagementSystem "EBSI-KMS" .
+
+ex:TaiwanCorporateIdentity a id:Identity ;
+    id:id "taiwan-corp" ;
+    id:type "TW-DIW" ;
+    id:did "did:tw:corp:5566xyz" .
+
+ex:StablecoinSettlementIdentity a id:Identity ;
+    id:id "stablecoin" ;
+    id:type "ETH-Settlement" ;
+    id:did "did:eth:0xabc123456def" ;
+    id:capabilities "stable-value-transfer" .
+
+#################################################################
+# 3. CAPABILITIES
+#################################################################
+
+ex:TWComplianceAgent agent:hasCapability ex:SubmitKYC, ex:RetrieveEUDICredential, ex:CrossBorderFiling, ex:StablecoinPayment .
+
+ex:SubmitKYC a cap:Capability ;
+    cap:id "submit-kyc" ;
+    cap:description "Submit KYC/AML documents through EUDI Wallet interfaces." .
+
+ex:RetrieveEUDICredential a cap:Capability ;
+    cap:id "retrieve-credential" ;
+    cap:description "Fetch verifiable credentials issued by Portuguese authorities." .
+
+ex:CrossBorderFiling a cap:Capability ;
+    cap:id "crossborder-filing" ;
+    cap:description "Submit corporate filings through EU gateway using EUDI-backed signatures." .
+
+ex:StablecoinPayment a cap:Capability ;
+    cap:id "settlement" ;
+    cap:description "Execute stablecoin settlement for cross-border services (did:eth / did:ebsi)." .
+
+#################################################################
+# 4. DELEGATION (Taiwan SME → AI Agent → Portugal Authorities)
+#################################################################
+
+ex:DelegationRecord1 a del:Delegation ;
+    del:delegator "did:tw:corp:5566xyz" ;
+    del:delegatee ex:TWComplianceAgent ;
+    del:scope "EU onboarding, EUDI Wallet transactions, filings, KYC handling" ;
+    del:validFrom "2025-10-01T00:00:00Z"^^xsd:dateTime ;
+    del:validUntil "2026-10-01T00:00:00Z"^^xsd:dateTime ;
+    del:constraints "Use only registered identities; all actions must be ledger-recorded" .
+
+#################################################################
+# 5. LEDGER ENTRIES (Cross-Border Example)
+#################################################################
+
+ex:LedgerEntry1 a ledger:RuntimeLedgerRecord ;
+    ledger:eventId "ledger-eu-0001" ;
+    ledger:timestamp "2025-11-09T08:00:00Z"^^xsd:dateTime ;
+    ledger:recordsAction ex:SubmitKYC ;
+    ledger:note "Submitted KYC to Banco de Portugal via EUDI Wallet." .
+
+ex:LedgerEntry2 a ledger:RuntimeLedgerRecord ;
+    ledger:eventId "ledger-eu-0002" ;
+    ledger:timestamp "2025-11-09T08:30:00Z"^^xsd:dateTime ;
+    ledger:recordsAction ex:RetrieveEUDICredential ;
+    ledger:note "Retrieved Verified Corporate Registration Credential from Portuguese Business Registry." .
+
+ex:LedgerEntry3 a ledger:RuntimeLedgerRecord ;
+    ledger:eventId "ledger-eu-0003" ;
+    ledger:timestamp "2025-11-09T10:00:00Z"^^xsd:dateTime ;
+    ledger:recordsAction ex:CrossBorderFiling ;
+    ledger:note "Filed cross-border corporate data using EUDI-backed signature." .
+
+ex:LedgerEntry4 a ledger:RuntimeLedgerRecord ;
+    ledger:eventId "ledger-eu-0100" ;
+    ledger:timestamp "2025-11-09T11:00:00Z"^^xsd:dateTime ;
+    ledger:recordsAction ex:StablecoinPayment ;
+    ledger:note "Executed EUR-stable-value cross-border payment via did:eth settlement channel." .
