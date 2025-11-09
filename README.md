@@ -17,6 +17,16 @@ The work is built upon several foundational concepts:
 *   **Ledger-Based Accountability:** The use of an immutable ledger to create a verifiable, append-only log of all agent actions for robust auditing and accountability.
 *   **TEE/DID/Audit Chain Binding:** A cryptographic trust foundation that binds an agent's identity (DID) and its actions to secure hardware (Trusted Execution Environments or TEEs) and a verifiable audit chain.
 
+### 1.2 Relationship to the Web and Semantic Web
+
+This project is fundamentally a Web-native initiative, designed to bring the principles of the Web to the world of autonomous agents.
+
+*   **Global Interoperability:** By using Web standards (URIs, RDF, JSON-LD), we enable agents to communicate and interact over the internet in a decentralized manner, free from platform lock-in. The goal is to create a global network of interoperable agents, much like the Web created a global network of documents.
+
+*   **Semantic Clarity:** The project leverages the Semantic Web stack to provide a machine-readable and unambiguous definition of concepts. When an agent encounters a `delegation` or a `capability` from another agent, its meaning is precisely defined by the shared ontology (OWL/RDF), eliminating misunderstandings and enabling reliable automation.
+
+*   **Linked Data and Reasoning:** This approach allows all information related to an agent—its identity (DID), capabilities, actions (ledger), and context—to be interconnected as a coherent knowledge graph. Furthermore, it enables logical reasoning (inference), allowing systems to make deductions, such as automatically verifying complex authorization chains.
+
 ---
 
 ## 2. Repository Structure
