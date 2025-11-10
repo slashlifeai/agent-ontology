@@ -16,6 +16,8 @@ Today's AI agents often exist as "digital islands," unable to communicate effect
 *   **Who gave you that authority?** (Delegation)
 *   **How can we prove what you did?** (Accountability & Ledger)
 
+This core set of concepts forms a **Minimal Communicable Interface**, enabling basic interoperability and trust, with the flexibility to extend for more complex interactions.
+
 ---
 
 ### **Live Resources & Interactive Tools**
