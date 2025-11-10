@@ -1,0 +1,34 @@
+name: SHACL Validation
+
+on: [push, pull_request]
+
+jobs:
+  shacl-validate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install pyshacl
+      run: pip install pyshacl rdflib
+
+    - name: Run SHACL validation
+      run: |
+        # Assuming core.ttl is the main ontology and agent.shacl.ttl is the main SHACL file
+        # Adjust paths as necessary for other ontologies and SHACL files
+        pyshacl -s ontologies/agent.ttl -d tests/agent.shacl.ttl
+        pyshacl -s ontologies/accountability.ttl -d tests/accountability.shacl.ttl
+        pyshacl -s ontologies/agent-profile.ttl -d tests/agent-profile.shacl.ttl
+        pyshacl -s ontologies/capability.ttl -d tests/capability.shacl.ttl
+        pyshacl -s ontologies/delegation.ttl -d tests/delegation.shacl.ttl
+        pyshacl -s ontologies/execution-context.ttl -d tests/execution-context.shacl.ttl
+        pyshacl -s ontologies/intent.ttl -d tests/intent.shacl.ttl
+        pyshacl -s ontologies/ledger.ttl -d tests/ledger.shacl.ttl
+        pyshacl -s ontologies/payment.ttl -d tests/payment.shacl.ttl
+        pyshacl -s ontologies/security-binding.ttl -d tests/security-binding.shacl.ttl
+

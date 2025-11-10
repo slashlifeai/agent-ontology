@@ -1,74 +1,56 @@
-# Project Roadmap: From W3C Community Group to ISO/IEC JTC 1 Fast Track
+# Project Roadmap: Semantic Agent Ontology
 
-**Document Status:** Draft  
+**Status:** Draft
 **Version:** 0.1
 
-## 1. Introduction
+## 1. Vision
 
-This document outlines the strategic roadmap for the Semantic Agent Ontology project. The goal is to mature the specifications within a W3C Community Group and subsequently submit them to ISO/IEC JTC 1 for formal international standardization via the Fast Track procedure.
+To establish the Semantic Agent Ontology as a foundational W3C standard for interoperable, accountable, and trustworthy AI agent communication, enabling a new generation of collaborative AI ecosystems.
 
-This roadmap is designed to maximize community involvement, technical robustness, and global adoption.
+## 2. Key Milestones & Phases
 
-## 2. Phase 1: W3C Community Group Incubation (Current Phase)
+Our roadmap is structured around the W3C standardization process, with a strong emphasis on community engagement and technical refinement.
 
-This is the current, foundational phase of the project.
+### Phase 1: Community Group Incubation (Current - Q1 2026)
 
-- **Primary Goals:**
-  - **Develop and Stabilize the Ontology:** Collaboratively refine the core ontology, schemas, and context files until they reach a stable, version 1.0 state.
-  - **Build a Community:** Attract a diverse group of stakeholders, including OS developers, AI researchers, enterprise users, and regulatory experts.
-  - **Gather Implementation Experience:** Use the **AI Workforce OS** as a reference implementation to validate the practicality and correctness of the specification. Encourage other independent implementations.
+**Objective:** Build a vibrant community, gather initial feedback, and refine the core ontology based on diverse use cases and technical input.
 
-- **Key Deliverables:**
-  - Stable Version 1.0 of the Ontology and associated specifications.
-  - A comprehensive test suite (SHACL and other validation tools).
-  - A portfolio of use cases and implementation reports.
-  - A final W3C Community Group Report summarizing the work and its readiness for formal standardization.
+*   **Milestones:**
+    *   **W3C Community Group Established:** Successful activation of the W3C Semantic Agent Communication Community Group.
+    *   **Initial Community Engagement:** Active participation in discussions, regular meetings, and initial contributions from diverse stakeholders.
+    *   **Core Ontology Refinement (v0.2):** Incorporate feedback from the community to enhance clarity, completeness, and practical applicability of `core.ttl` and related modules.
+    *   **Expanded Use Cases & Examples:** Develop a richer set of real-world examples in `ontologies/examples/` to demonstrate the ontology's utility.
+    *   **Automated Validation (CI):** Implement and stabilize automated SHACL validation for all ontology modules (completed).
 
-## 3. Phase 2: W3C Recommendation Track (Optional but Recommended)
+### Phase 2: Towards First Public Working Draft (Q2 - Q3 2026)
 
-Upon successful completion of Phase 1, the group may choose to charter a formal W3C Working Group to advance the specification to a W3C Recommendation.
+**Objective:** Transition the work from the Community Group to a W3C Working Group, aiming for the publication of the First Public Working Draft (FPWD).
 
-- **Benefits:**
-  - A W3C Recommendation carries significant weight and indicates broad consensus from industry leaders.
-  - The formal W3C process provides a rigorous framework for review, patent policy management, and internationalization.
+*   **Milestones:**
+    *   **W3C Working Group Proposal:** Submit a formal proposal to establish a W3C Working Group for the Semantic Agent Ontology.
+    *   **Working Group Formation:** Successful chartering and launch of the W3C Working Group.
+    *   **First Public Working Draft (FPWD):** Publish the initial version of the Semantic Agent Ontology specification as a W3C FPWD.
+    *   **Test Suite Development (Initial):** Begin developing a comprehensive test suite to ensure interoperability and conformance.
 
-## 4. Phase 3: ISO/IEC JTC 1 Fast Track Submission
+### Phase 3: Candidate Recommendation & Beyond (Q4 2026 onwards)
 
-This is the primary goal for formal international standardization.
+**Objective:** Advance the specification through the W3C Recommendation Track, ensuring broad implementation and adoption.
 
-- **Process:**
-  - Under the existing agreement between W3C and ISO/IEC JTC 1 (the Joint Technical Committee for Information Technology), a mature W3C Recommendation or a similar stable specification can be submitted to the JTC 1 "Fast Track" process.
-  - The specification is submitted to ISO/IEC national bodies for a ballot. If approved, it becomes a formal ISO/IEC International Standard.
+*   **Milestones:**
+    *   **Candidate Recommendation (CR):** Achieve Candidate Recommendation status, indicating a stable specification ready for implementation experience.
+    *   **Implementation Report:** Gather and document multiple independent implementations of the ontology.
+    *   **Proposed Recommendation (PR):** Advance to Proposed Recommendation status.
+    *   **W3C Recommendation (REC):** Publish the Semantic Agent Ontology as a full W3C Recommendation.
+    *   **ISO/IEC Liaison & Alignment:** Continue to foster alignment and potential downstream standardization with ISO/IEC JTC 1/SC 42.
 
-- **Advantages:**
-  - **Speed:** The Fast Track process is significantly faster than developing a standard from scratch within ISO.
-  - **Global Reach:** An ISO/IEC standard has global recognition and is often adopted or referenced in national regulations and public procurement.
+## 3. Contribution Areas
 
-## 5. Alignment with ISO/IEC JTC 1/SC 42 (Artificial Intelligence)
+We welcome contributions across all phases, particularly in:
 
-Our work is strategically aligned with the mandate of SC 42, the ISO/IEC subcommittee for AI. The following diagram illustrates how the Semantic Agent Ontology contributes to several of its key Working Groups (WGs).
+*   **Technical Specification:** Refining ontology definitions, properties, and constraints.
+*   **Use Case Development:** Providing real-world scenarios and examples.
+*   **Tooling & Implementations:** Developing parsers, validators, and reference implementations.
+*   **Documentation:** Improving clarity, completeness, and accessibility of all project documents.
+*   **Community Building:** Participating in discussions, outreach, and event organization.
 
-```mermaid
-graph TD
-    subgraph SC 42 Working Groups
-        WG1["WG 1 <br> Foundational Standards"]
-        WG3["WG 3 <br> Trustworthiness"]
-        WG4["WG 4 <br> Use cases and applications"]
-        WG6["WG 6 <br> Governance"]
-    end
-
-    subgraph Our Project
-        Ontology["Semantic Agent Ontology"]
-    end
-
-    Ontology -- "Provides a foundational data model for AI systems" --> WG1
-    Ontology -- "Enables auditable records and verifiable claims for trustworthy AI" --> WG3
-    Ontology -- "Supports interoperable agent-based use cases (e.g., autonomous commerce)" --> WG4
-    Ontology -- "Provides a technical basis for AI system governance and risk management" --> WG6
-```
-
-## 6. New Work Item Proposal (NWIP)
-
-A critical step for the ISO process is the submission of a New Work Item Proposal (NWIP). A draft of this document is being prepared and can be found in `specs/iso-nwip-draft.md`.
-
-This NWIP will serve as the formal proposal to ISO/IEC JTC 1, outlining the scope, purpose, and business case for standardizing this ontology. We will develop this document in parallel with the technical work to ensure a smooth transition to Phase 3.
+This roadmap is a living document and will be updated based on community feedback and W3C process requirements.
