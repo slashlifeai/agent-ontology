@@ -34,7 +34,7 @@ This definition is **radically implementation-agnostic**. An agent can be an LLM
 
 Our ontology leverages foundational **Semantic Web technologies** such as RDF (Resource Description Framework), OWL (Web Ontology Language), and SHACL (Shapes Constraint Language) to formally define its concepts. The Semantic Web is highly relevant for representing and reasoning about an agent's general **knowledge** about the world (e.g., facts, relationships between entities).
 
-However, it is crucial to clarify that **this project does not deal with general agent knowledge representation or reasoning about the world's facts.** Our focus is exclusively on **interaction semantics**: how agents communicate, delegate authority, and establish accountability in a verifiable manner. We provide the language for *how* agents interact, not *what* they know about the world or *how* they reason internally.
+However, it is crucial to clarify that **this project does not deal with general agent knowledge representation or reasoning about the world's facts.** Our focus is exclusively on **interaction semantics**: how agents communicate, delegate authority, and establish accountability in a verifiable manner. We provide the language for *how* agents interact, not *what* they know about the world or *how* they reason internally. This deliberate decoupling is a critical design feature: by avoiding strong linkages to any specific knowledge, legal, or cultural domain, the ontology remains a neutral and universal framework, ensuring maximum interoperability across diverse regulatory and cultural contexts.
 
 ### The "Content," Not the "Container"
 
