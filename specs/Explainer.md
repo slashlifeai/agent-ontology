@@ -313,7 +313,7 @@ An ISA (like x86 or ARM) provides a stable abstraction layer between software an
 
 This stable abstraction layer decouples the "internal thought process" of an agent from its "external social behavior," unlocking massive innovation potential for the entire ecosystem.
 
-## 7. Philosophical Foundation: A Framework for Computable Meaning
+## 7. Philosophical Foundation: A Framework for Computable Meaning (Optional, Non-Normative)
 
 The ultimate philosophical underpinning of this ontology can be understood through the lens of Ludwig Wittgenstein's later work on **"language-games."** Wittgenstein argued that meaning is not inherent but arises from *use* within a specific, rule-bound context or "game." Our ontology provides a formal framework to instantiate these games in the digital realm.
 
