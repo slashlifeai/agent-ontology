@@ -1,0 +1,7 @@
+{
+  "@context": "https://ns.slashlife.ai/agent/context/delegation.jsonld",
+  "@type": "Delegation",
+  "delegatedBy": "user:cli_user",
+  "delegatesTo": "did:example:OntologyCLI",
+  "delegationScope": "The agent is permitted to use the WriteFile capability within the current working directory."
+}
