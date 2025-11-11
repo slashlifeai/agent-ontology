@@ -72,6 +72,35 @@ However, they are not the same thing, and our model is intentionally decoupled:
 
 In short, blockchain technology by itself does not solve the problem of semantic interoperability. It doesn't tell you *what* to write on the ledger or what that data *means*. Our ontology provides that missing semantic layer. The `Ledger` could be implemented using a distributed blockchain (like Ethereum), a centralized database (in a trusted enterprise environment), or other distributed ledger technologies, depending on the specific application's requirements for decentralization and security.
 
+### 4.3. The Dimension of Time: Pluggable and Verifiable
+
+Time is a critical dimension for accountability, defining the sequence and validity of actions. Our ontology incorporates time through optional properties like `timestamp`, `validFrom`, and `deadline`. However, the source of truth for this temporal information is designed to be **pluggable**, acknowledging that "finality" can be achieved in different ways.
+
+This leads to two primary models for verifying the temporal state:
+
+1.  **Technical Finality:** In systems where the ledger is implemented on an append-only technology like a **blockchain**, state consistency and event ordering are enforced by the protocol itself. The timeline is cryptographically secured and serves as the undisputed source of truth within that system.
+
+2.  **Legal and Social Finality:** In many enterprise or legal contexts, the ledger's records serve as **verifiable digital evidence**. If a dispute arises over the timing or sequence of events, the final arbiter is not the system's code but an external **judicial or auditing system**. The ontology provides a clear, structured "paper trail" for these human-centric governance processes to interpret.
+
+This flexibility is a core feature, allowing the ontology to bridge fully automated, trustless ecosystems and traditional environments that operate under legal and regulatory frameworks.
+
+### 4.4. Enabling Online Arbitration and Self-Regulation
+
+Beyond mere traceability, this ontology lays the groundwork for advanced forms of **online arbitration and system self-regulation**.
+
+Disputes in multi-agent systems often boil down to disagreements over "facts" (what happened) and "rules" (what should have happened). Our ontology directly addresses both:
+
+*   **Objective Facts:** The immutable `ExecutionRecord`s, `Delegation`s, and `Intent`s stored on the ledger provide a verifiable, machine-readable record of events. These serve as the undeniable "evidence."
+*   **Formal Rules:** The accompanying SHACL shapes (as seen in our `tests/` directory) define the expected constraints and behaviors for agents. These act as the "laws" or "contractual terms" that agents are expected to follow.
+
+By feeding these objective facts and formal rules into automated reasoning engines or smart contracts, the system gains the capability to:
+
+*   **Automatically Assess Compliance:** Determine if an agent's actions adhered to its delegated authority and stated intent.
+*   **Identify Breaches:** Flag instances where rules were violated or expectations were not met.
+*   **Trigger Automated Responses:** For predefined scenarios, the system can initiate self-regulatory actions, such as automatically adjusting reputation scores, triggering penalties, revoking further delegation rights, or reassigning tasks—all without direct human intervention.
+
+This capability is crucial for building truly autonomous and trustworthy AI ecosystems, where disputes can be resolved efficiently and transparently, fostering greater confidence in agent interactions.
+
 ## 5. Who Is This For?
 
 *   **OS & Platform Developers:** To build next-generation "agent-native" operating systems.
