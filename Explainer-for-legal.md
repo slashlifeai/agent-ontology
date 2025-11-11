@@ -2,6 +2,19 @@
 
 This document aims to clarify specific terminology within this technical framework for legal professionals and to map them to corresponding legal concepts.
 
+**Disclaimer:** While this document provides interpretations and use cases for legal professionals, it is crucial to note that the Community Group's formal scope is strictly limited to defining machine-verifiable semantic structures. It does not define regulatory frameworks, compliance interpretations, or legal norms. The semantic structures provided are designed to be usable by such frameworks, but the legal interpretations themselves fall outside the CG's standardization efforts.
+
+## Core Ontology Concepts and Legal Mappings
+
+| Ontology Concept | Legal Concept (English)      | Explanation (English)                                  |
+| :--------------- | :--------------------------- | :------------------------------------------------------- |
+| `Agent`          | Agent (incl. Legal Entity)   | Can have limited liability                             |
+| `Intent`         | Declaration of Intent        | Auditable                                              |
+| `Delegation`     | Authorization / Mandate      | Validity period, ultra vires, revocation               |
+| `ExecutionRecord`| Factual Evidence             | Replayable, immutable                                  |
+| `Narrative`      | Case File / Record of Events | State record, tamper-proof                             |
+| `Capability`     | Legal Capacity / Authority   | Specific scope of actions                              |
+
 ## Delegation (Quasi-Mandate / Agency)
 
 In our system, `Delegation` refers to the process by which one entity (the principal) authorizes another entity (the agent) to perform specific tasks on its behalf. Legally, this can correspond to a "quasi-mandate" or "agency" relationship.
