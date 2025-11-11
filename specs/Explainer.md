@@ -240,7 +240,35 @@ Our `Narrative` model finds a striking parallel here:
 
 By viewing `Narrative`s through Luhmann's lens, we gain a deeper understanding of how our ontology facilitates the emergence of truly autonomous and self-organizing digital societies.
 
-## 6. Who Is This For?
+## 6. Architectural Analogy: Mapping to Foundational Protocols
+
+The design philosophy of this ontology mirrors the principles that have made foundational protocols like TCP/IP, QUIC, and Instruction Set Architectures (ISAs) successful and enduring. Understanding these analogies clarifies the robustness and long-term vision of our approach.
+
+### 6.1. Analogy to TCP/IP: The Art of Layering and Decoupling
+
+The genius of the TCP/IP stack is its strict layering, which separates the problem of routing data (IP) from the problem of ensuring its reliable transmission (TCP) and its ultimate meaning (Application Layer). Our ontology applies the same principle:
+
+*   **It operates above the transport layer:** We are agnostic to the underlying network (like IP) and transport protocols (like TCP, HTTP, WebSockets).
+*   **It defines a new "Semantic Contract Layer":** Situated above the application layer, our standard decouples the *meaning, trust, and consequences* of an interaction from the mere transmission of its data. This ensures its adaptability to any future evolution of the internet.
+
+### 6.2. Analogy to QUIC: Pragmatism Over Theoretical Purity
+
+QUIC (a modern transport protocol built on UDP) represents a pragmatic evolution of TCP, acknowledging that a one-size-fits-all approach to reliability is not always efficient. Our `Unified Narrative` model embodies a similar pragmatism:
+
+*   **It differentiates communication acts:** A theoretically "pure" system might demand that every single communication act undergo a costly consensus process.
+*   **It allows for varied costs and consistency:** Our model allows for low-stakes negotiation acts (`Query`, `Report`) to be handled more like lightweight UDP packets, while high-stakes contractual acts (`Delegate`, `Complete`) require stronger, TCP-like guarantees. This balances theoretical elegance with real-world performance and efficiency.
+
+### 6.3. Analogy to Instruction Set Architectures (ISA): A Stable Contract
+
+An ISA (like x86 or ARM) provides a stable abstraction layer between software and hardware, allowing any compliant software to run on any compliant hardware. Our ontology serves as the **Instruction Set Architecture for Agent Societies**:
+
+*   **Agent Implementations (the "Software"):** Can be anything—LLMs, rule-based systems, or even humans.
+*   **Interaction Infrastructure (the "Hardware"):** Can be anything—blockchains, centralized databases, or peer-to-peer networks.
+*   **Our Ontology (the "ISA"):** As long as an agent's external `CommunicativeAct`s adhere to our defined "instruction set," it can interoperate with any other compliant agent on any compliant infrastructure.
+
+This stable abstraction layer decouples the "internal thought process" of an agent from its "external social behavior," unlocking massive innovation potential for the entire ecosystem.
+
+## 7. Who Is This For?
 
 *   **OS & Platform Developers:** To build next-generation "agent-native" operating systems.
 *   **AI Application Developers:** To create interoperable agents that can collaborate across a rich ecosystem.
