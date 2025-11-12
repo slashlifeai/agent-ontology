@@ -265,24 +265,32 @@ The entire theoretical foundation of this ontology is best understood as a multi
 *   **Hides:** The low-level details of cryptographic verification.
 *   **Provides:** **Enforceable Order**. It uses the verifiable facts from LoA 1 to build a system of rules (the Ontology + SHACL). The guarantee to the layers above is that no interaction that violates these rules can be considered valid within the system.
 
-### 5.4. LoA 3: The Economic Engine (The Incentive for Action)
-*   **Theory:** Coase's Theory of the Firm (Transaction Costs).
+### 5.4. LoA 3: The Information Economy (The Marketplace for Value)
+*   **Theory:** Information Economics, Mechanism Design.
 *   **Hides:** The formal details of the governance rules.
-*   **Provides:** **Rational Action**. It guarantees that the system is designed to be maximally efficient, providing a rational incentive for agents to participate and collaborate. The layers above can assume that interactions are, by design, economically efficient.
+*   **Provides:** **Valuation and Exchange**. This is the crucial layer where semantic value is converted into economic value. It provides the primitives for a "marketplace of capabilities" where:
+    *   An `ExecutionRecord` (proof of a completed task) serves as a verifiable "semantic asset."
+    *   A `PaymentIntent` is triggered by this asset, converting the semantic value into monetary value.
+    This layer allows for the design of sophisticated economic mechanisms, such as auctions for capabilities or dynamic pricing for information, all built upon the trusted foundation of the layers below.
 
-### 5.5. LoA 4: The Sociological Structure (The Fabric of Society)
+### 5.5. LoA 4: The Economic Organization (The Incentive for Firms)
+*   **Theory:** Coase's Theory of the Firm (Transaction Costs).
+*   **Hides:** The specific mechanics of value exchange in the marketplace.
+*   **Provides:** **Rational Organization**. It explains *why* and *how* rational agents, operating in the marketplace defined by LoA 3, will choose to form temporary or long-term "firms" (i.e., hierarchical `Delegation` chains) to minimize transaction costs. This layer provides the economic incentive for forming complex agent teams.
+
+### 5.6. LoA 5: The Sociological Structure (The Fabric of Society)
 *   **Theory:** Luhmann's Systems Theory.
-*   **Hides:** The individual economic calculations of each agent.
-*   **Provides:** **Complex Collaboration**. It offers a framework for understanding how simple, rational interactions can self-organize into complex, stable social systems (`Narrative`s), enabling the modeling of teams, organizations, and communities.
+*   **Hides:** The individual economic calculations of each agent or firm.
+*   **Provides:** **Complex Collaboration**. It offers a framework for understanding how simple, rational interactions and firm structures can self-organize into complex, stable social systems (`Narrative`s), enabling the modeling of entire industries and communities.
 
-### 5.6. LoA 5: The Semantic Interface (The Language of Meaning)
+### 5.7. LoA 6: The Semantic Interface (The Language of Meaning)
 *   **Theory:** Wittgenstein's Language-Games, Speech Act Theory.
 *   **Hides:** The immense complexity of the entire underlying social, economic, legal, and cryptographic structure.
-*   **Provides:** **Meaningful Communication**. This is the highest level of abstraction, offering a simple, intuitive set of "social moves" (`Intent`, `Delegate`, `Accept`, etc.) that agents can use to interact. An agent at this layer only needs to understand the *meaning* of these acts, trusting that the five layers below will guarantee their execution is secure, orderly, efficient, and logically sound.
+*   **Provides:** **Meaningful Communication**. This is the highest level of abstraction, offering a simple, intuitive set of "social moves" (`Intent`, `Delegate`, `Accept`, etc.) that agents can use to interact. An agent at this layer only needs to understand the *meaning* of these acts, trusting that the layers below will guarantee their execution is secure, orderly, efficient, and logically sound.
 
 This rigorous, multi-layered architecture is the core of our design. It is how we build a system that is simultaneously rich in meaning and provably trustworthy.
 
-### 5.7. Ultimate Philosophical Parallel: The Tao of Decentralized Governance (Optional, Non-Normative)
+### 5.8. Ultimate Philosophical Parallel: The Tao of Decentralized Governance (Optional, Non-Normative)
 
 Finally, we can frame the entire methodological and theoretical structure of this project through a final, profound parallel: the ancient Eastern philosophy of the **Tao Te Ching**. This is not a technical argument, but a philosophical resonance that speaks to the ultimate "why" of our design choices. The principles of decentralized, self-organizing systems we have derived through modern computer science and philosophy find a stunning echo in its timeless wisdom.
 
