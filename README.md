@@ -1,4 +1,4 @@
-# W3C Agent Semantic Communication Community Group: AI Agent Ontology
+# W3C Agent Semantic Communication Community Group: AI Agent Semantic Communication Ontology
 
 (Note: This repository will be migrated to a dedicated GitHub organization once the Community Group is formally activated.)
 
